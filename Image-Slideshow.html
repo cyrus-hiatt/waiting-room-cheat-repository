@@ -1,0 +1,61 @@
+<style>
+  /*----- slideshow -----*/
+  .slideshow {
+    width: 100%;
+    height: 400px;
+    min-height: 300px;
+    overflow: hidden;
+    min-height: 50%;
+    position: relative;
+    background-color: var(--brand_color_2);
+  }
+
+  .slideshow img {
+    position: absolute;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  /*----- slideshow -----*/
+</style>
+<script>
+  var pageid;
+  var culture;
+
+  queueViewModel.pageReady(function (data) {
+    pageid = $("body").attr("data-pageid");
+    culture = $("body").attr("data-culture");
+
+    if ($(window).width() > 768 && $("slideshow").length === 0) {
+      $(`<div class="slideshow">
+            <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img1.jpeg" alt="background image" />
+            <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img2.jpg" alt="background image" />
+            <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img3.jpg" alt="background image" />
+            <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img4.jpg" alt="background image" />
+            <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img5.jpg" alt="background image" />
+            <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img6.jpg" alt="background image" />
+          </div>`).insertBefore("#wrapper");
+    }
+
+    if ($(window).width() <= 768 && $("slideshow").length === 0) {
+      $(`<div class="slideshow">
+        <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img1-mobile.jpeg" alt="background image" />
+        <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img2-mobile.jpg" alt="background image" />
+        <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img3-mobile.jpg" alt="background image" />
+        <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img4-mobile.jpg" alt="background image" />
+        <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img5-mobile.jpg" alt="background image" />
+        <img src="https://assets-ap-northeast-1.queue-it.net/lgekr/userdata/Theme-V1/files/assets/slider-img6-mobile.jpg" alt="background image" />
+          </div>`).insertBefore("#wrapper");
+    }
+
+    function fader() {
+      $(".slideshow img").first().appendTo(".slideshow").fadeOut(3000);
+      $(".slideshow img").first().fadeIn(3000);
+      setTimeout(fader, 4200);
+    }
+    fader();
+  });
+</script>
