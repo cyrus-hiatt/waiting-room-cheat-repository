@@ -1,0 +1,18 @@
+.progressbar {
+  height: 30px;
+  background: #0b0b0b;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  opacity: 1;
+}
+.progressbar .progress,
+.progressbar .progress.updated {
+  background: linear-gradient(
+    to right,
+    var(--dark-red),
+    var(--dark-red),
+    var(--light-red)
+  );
+  overflow: visible !important;
+}
