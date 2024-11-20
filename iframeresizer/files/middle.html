@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title></title>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://static.queue-it.net/script/queueinfo.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="iframeResizer.contentWindow.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Source Sans 3", sans-serif;
+      }
+
+      .main-container {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+
+      .header {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        color: #263e6a;
+      }
+
+      .bullet-point {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25.6px;
+        color: #263e6a;
+      }
+
+      .container {
+        /*  display: none; */
+      }
+
+      .enabled {
+        display: block;
+      }
+
+      .container.enabled {
+        display: block;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 0;
+      }
+
+      .logo-row {
+        display: flex;
+        align-items: flex-start;
+        height: 45px;
+        justify-content: space-between;
+        width: 324px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="content-en-GB" class="container">
+        <div class="header">Please note</div>
+        <ul>
+          <li class="bullet-point">
+            Due to the high demand, we ask for your patience. As soon as it is
+            your turn, you will be forwarded automatically.
+          </li>
+          <li class="bullet-point">
+            The cruise can only be booked online and cannot be booked by
+            telephone
+          </li>
+          <li class="bullet-point">
+            The contingent is limited. A waiting room place does not guarantee a
+            subsequent booking. Only binding fixed bookings are possible.
+          </li>
+          <li class="bullet-point">
+            Please have the log-in data for your <i>Mein Schiff ®</i> account as
+            well as all participant and payment data ready.
+          </li>
+        </ul>
+      </div>
+
+      <div id="content-de-DE" class="container">
+        <div class="header">Hinweise</div>
+        <ul>
+          <li class="bullet-point">
+            Infolge der hohen Nachfrage bitten wir Sie um etwas Geduld. Sobald
+            Sie an der Reihe sind, werden Sie automatisch weitergeleitet.
+          </li>
+          <li class="bullet-point">
+            Die Reise ist ausschließlich online buchbar und kann nicht
+            telefonisch gebucht werden.
+          </li>
+          <li class="bullet-point">
+            Das Kontingent ist limitiert. Ein Warteraumplatz garantiert keine
+            Buchung im Anschluss. Es sind ausschließlich verbindliche
+            Festbuchungen möglich.
+          </li>
+          <li class="bullet-point">
+            Bitte halten Sie die Log-in Daten für Ihr <i>Mein Schiff ®</i> Konto
+            sowie alle Teilnehmer- und Ihre Zahldaten bereit. 
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="logo-container">
+      <div class="logo-row">
+        <div class="logo-1">
+          <img src="assets/Mein-Schiff-Logo.png" alt="Mein-Schiff-Logo" />
+        </div>
+        <div class="logo-2">
+          <img src="assets/TUIC-Logo.png" alt="TUIC-Logo" />
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        if (window.queueUserInfoClient && window.queueUserInfoClient.userInfo) {
+          // Use Queue-it SDK methods to get pageId and cultureId
+          setPageId(window.queueUserInfoClient.getPageId());
+          setCulture(window.queueUserInfoClient.getCultureId()); // Get cultureId from SDK
+        }
+
+        // Set pageId-related visibility
+        function setPageId(pageId) {
+          if (pageId === "queue") {
+            $(".main-container").show();
+          } else if (
+            pageId === "before" ||
+            pageId === "after" ||
+            pageId === "error"
+          ) {
+            $(".main-container").hide();
+          }
+        }
+
+        // Set culture-related content display
+        function setCulture(culture) {
+          if (culture === "en-GB") {
+            $("#content-en-GB").addClass("enabled");
+            $("#content-de-DE").removeClass("enabled");
+          } else if (culture === "de-DE") {
+            $("#content-de-DE").addClass("enabled");
+            $("#content-en-GB").removeClass("enabled");
+          } else {
+            console.error("Unknown culture:", culture);
+          }
+        }
+
+        // If cultureId or pageId changes dynamically, ensure to handle updates
+        window.queueUserInfoClient.onPageIdChanged = setPageId;
+        window.queueUserInfoClient.onCultureIdChanged = setCulture; // If culture changes dynamically
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        if (window.queueUserInfoClient && window.queueUserInfoClient.userInfo) {
+          setPageId(window.queueUserInfoClient.userInfo.pageId);
+        }
+      });
+      window.queueUserInfoClient.onPageIdChanged = setPageId;
+      function setPageId(pageId) {
+        if (pageId == "queue") {
+          $(".main-container").show();
+        }
+        if (pageId == "before") {
+          $(".main-container").hide();
+        }
+        if (pageId == "after") {
+          $(".main-container").hide();
+        }
+        if (pageId == "error") {
+          $(".main-container").hide();
+        }
+      }
+    </script>
+  </body>
+</html>

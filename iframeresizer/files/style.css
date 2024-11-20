@@ -1,0 +1,140 @@
+﻿*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* @font-face {
+  font-family: ;
+  src: url();
+} */
+
+:root {
+}
+
+body {
+  box-sizing: border-box;
+  /* background-image: url(./background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-attachment: fixed; */
+}
+
+#main .t {
+  display: none;
+}
+
+#main .c {
+  background: #fff;
+}
+
+#main .b {
+  display: none;
+}
+
+#header {
+  border-bottom: none;
+}
+
+.warning-box {
+  background: #fff;
+  border-bottom: none;
+}
+
+#MainPart_divProgressbarBox {
+  background: none;
+  color: #000;
+}
+
+.processbar-box {
+  background: #fff;
+}
+
+.processbar-box .holder {
+  background: #fff;
+  border-bottom: none;
+}
+
+#queueIdLinkURL {
+  border: 1px solid #19be81;
+  padding: 5px;
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#lbHeaderH2 {
+}
+
+#lbHeaderP {
+}
+
+/* .progressbar {
+  height: ;
+  margin: 0 auto;
+  background: ;
+  border: none;
+  border-radius: ;
+}
+
+.progressbar .progress {
+  height: 100%;
+  text-align: right;
+  width: 0;
+  float: left;
+  background-color: ;
+  background-image: none;
+  position: relative;
+  min-width: ;
+  border-radius: ;
+  overflow: visible !important;
+}
+
+.progressbar .progress.updated {
+  background-image: ;
+  background-color: ;
+}
+
+.progressbar .progress .runner {
+  height: ;
+  width: ;
+  background-image: url();
+  -ms-background-size: contain;
+  background-size: contain;
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  right: ;
+  background-repeat: no-repeat;
+}
+
+.progressbar .progress .runner.paused {
+  height: ;
+  width: ;
+  background-image: url();
+  -ms-background-size: contain;
+  background-size: contain;
+  margin-top: ;
+  position: absolute;
+  bottom: ;
+  right: ;
+} */
+
+/* Tablet Landscape */
+@media screen and (max-width: 1200px) {
+}
+
+/* Tablet Portait */
+@media screen and (max-width: 900px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+}
+
+/* Desktop Big */
+@media screen and (min-width: 1800px) {
+}

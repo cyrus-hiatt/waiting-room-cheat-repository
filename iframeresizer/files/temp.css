@@ -1,0 +1,81 @@
+﻿/* temp css - beginning */
+/* Do not upload!!! */
+
+/* Only for testing - show or hide the sections which are otherwise set on the custom layout page */
+
+/* hide iframes - beginning */
+#MainPart_divExitLine {
+  display: none;
+}
+#toppanel {
+  display: none;
+}
+
+#leftpanel {
+  display: none;
+}
+
+#middlepanel {
+  /* display: none; */
+}
+
+#rightpanel {
+  display: none;
+}
+
+#sidebar {
+  display: none;
+}
+
+#bottompanel {
+  display: none;
+}
+
+#language-selector {
+  /* display: none; */
+}
+
+/* hide iframes - end */
+
+.logo {
+  display: none;
+}
+
+.logo img {
+  content: url(assets/queue-it-logo.png);
+}
+
+.reminder-form {
+  /* display: none; */
+}
+
+/* Queue information */
+
+/* Number in line  */
+#MainPart_lbQueueNumberText,
+#MainPart_lbQueueNumber,
+#MainPart_lbQueueNumberLineBreak {
+  /* display: none; */
+}
+
+/* users ahead */
+#MainPart_lbUsersInLineAheadOfYouText,
+#MainPart_lbUsersInLineAheadOfYou {
+  /* display: none; */
+}
+
+/* Expected arrival time  */
+#MainPart_lbExpectedServiceTimeText,
+#MainPart_lbExpectedServiceTime,
+#MainPart_lbExpectedServiceTimeTimeZonePostfix,
+#MainPart_lbExpectedServiceTimeLineBreak {
+  /* display: none; */
+}
+
+/* Estimated arrival time */
+#MainPart_lbWhichIsInText,
+#MainPart_lbWhichIsIn {
+  /* display: none; */
+}
+
+/* temp css - end */
