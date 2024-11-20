@@ -1,1 +1,1 @@
-Run node "<file-name>" in PowerShell in order to get started.
+Run node "file-name" in PowerShell in order to get started.
