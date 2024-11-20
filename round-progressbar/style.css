@@ -1,0 +1,116 @@
+.warning-box {
+  background: transparent;
+  border-bottom: none;
+}
+.processbar-box {
+  background: none;
+  color: #000;
+}
+
+.processbar-box .holder {
+  background: transparent;
+  border-bottom: none;
+  color: #000;
+}
+
+.processbar {
+  display: none;
+}
+
+body.queue .warning-box {
+  min-height: 0;
+  border: none;
+  padding: 10px 0 0 0;
+  font-weight: 400;
+  display: none;
+}
+
+body.queue .progressbar {
+  height: 26px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  padding: 5px;
+}
+body.queue .progressbar .progress {
+  height: 100%;
+  text-align: right;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  min-width: 20px;
+  background-color: #6cca91;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 11px,
+    #ffffff 11px,
+    #ffffff 13px,
+    transparent 13px,
+    transparent
+  ) !important;
+  background-size: 15px;
+}
+
+body.queue .progressbar .progress.updated {
+  animation: slide 2s linear infinite;
+  -webkit-animation: slide 2s linear infinite;
+  background-image: none;
+  background-color: #6cca91;
+}
+
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 30px 0;
+  }
+}
+body.queue .progressbar .progress .runner {
+  margin-top: 3px;
+}
+
+body.queue .progress-container {
+  margin: 15px auto;
+  text-align: center;
+}
+
+body.softblock .progress-container {
+  display: none !important;
+}
+
+body.queue .progress-circle {
+  /* background-image: url(assets/hour-glass.png); */
+  background-position: center center;
+  background-size: 80px 80px;
+  background-repeat: no-repeat;
+  overflow: visible;
+}
+
+body.queue .progress-circle-prog {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+body.queue .progress-circle-back {
+  fill: none;
+  stroke-width: 10px;
+}
+
+body.softblock .progress-circle-back {
+  display: none;
+}
+
+body.queue .progress-circle-prog {
+  fill: none;
+  stroke: #6cca91;
+  stroke-width: 4px;
+  stroke-dashoffset: 0px;
+  transition: stroke-dasharray 0.7s linear 0s;
+}
+
+body.softblock .progress-circle-prog {
+  display: none;
+}
