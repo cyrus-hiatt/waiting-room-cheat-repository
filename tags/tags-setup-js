@@ -1,0 +1,84 @@
+var _bg_url;
+var _logo_url;
+var _middle_url;
+var _progressbar;
+var _countdowntextcolor;
+var _countdowntextsize;
+var _eventstarttext;
+var _eventstarttextcolor;
+var _eventstarttextsize;
+
+function updateEventStartText() {
+  _eventstarttext = window.queueUserInfoClient.getTag("eventstarttext");
+  _eventstarttextcolor = window.queueUserInfoClient.getTag(
+    "eventstarttextcolor"
+  );
+  _eventstarttextsize = window.queueUserInfoClient.getTag("eventstarttextsize");
+  if (_eventstarttext != null) {
+    $(".event-time").text(_eventstarttext);
+  }
+  if (_eventstarttextcolor != null) {
+    $(".event-time").css("color", _eventstarttextcolor);
+  }
+  if (_eventstarttextsize != null) {
+    $(".event-time").css("font-size", _eventstarttextsize);
+  }
+}
+
+function updateCountdownStyle() {
+  _countdowntextcolor = window.queueUserInfoClient.getTag("countdowntextcolor");
+  _countdowntextsize = window.queueUserInfoClient.getTag("countdowntextsize");
+
+  if (_countdowntextcolor != null) {
+    $("#MainPart_lbWhichIsIn").css("color", _countdowntextcolor);
+  }
+
+  if (_countdowntextsize != null) {
+    $("#MainPart_lbWhichIsIn").css("font-size", _countdowntextsize);
+  }
+}
+
+function updateLogo() {
+  _logo_url = window.queueUserInfoClient.getTag("logo");
+  if (_logo_url != null) {
+    $(".logo img").attr("src", _logo_url);
+  }
+}
+
+function updateMiddleImage() {
+  _middle_url = window.queueUserInfoClient.getTag("middleimage");
+  if (_middle_url != null) {
+    $(".middle-image img").attr("src", _middle_url);
+  }
+}
+
+function updateBackground() {
+  _bg_url = window.queueUserInfoClient.getTag("backgroundurl");
+  if (_bg_url != null) {
+    $("body").css("background-image", "url(" + _bg_url + ")");
+  }
+}
+
+function updateProgressBar() {
+  _progressbar = window.queueUserInfoClient.getTag("progressbar");
+  if (_progressbar != null) {
+    $(".progressbar .progress").css("background-image", _progressbar);
+    $(".progressbar .progress.updated").css("background-image", _progressbar);
+  }
+}
+
+function setTags(tags) {
+  console.log(tags);
+  console.log(window.queueUserInfoClient.getTags());
+
+  updateEventStartText();
+  updateCountdownStyle();
+  updateLogo();
+  updateMiddleImage();
+  updateBackground();
+  updateProgressBar();
+}
+
+queueViewModel.pageReady(function (data) {
+  window.queueUserInfoClient.onTagsChanged = setTags;
+});
