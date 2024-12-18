@@ -1,0 +1,8 @@
+.challenge #logocontainer {
+  display: block !important;
+}
+
+#divChallenge_Content #header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
