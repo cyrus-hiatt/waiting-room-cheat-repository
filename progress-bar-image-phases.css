@@ -1,0 +1,53 @@
+.progressbar .progress .runner {
+  height: 50px;
+  width: 60px;
+  background-image: url(AirBalticPlane.png);
+  -ms-background-size: contain;
+  background-size: contain;
+  margin-top: 0;
+  position: absolute;
+  bottom: -31px;
+  right: 0px;
+  margin-right: -3px;
+  background-repeat: no-repeat;
+}
+
+.progressbar[aria-valuenow="0"] .progress .runner {
+  height: 50px;
+  width: 60px;
+  background-image: url(AirBalticLanding.png);
+  -ms-background-size: contain;
+  background-size: contain;
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  background-repeat: no-repeat;
+}
+
+.progressbar[aria-valuenow="100"] .progress .runner {
+  height: 50px;
+  width: 60px;
+  background-image: url(AirBalticTakeOff.png);
+  -ms-background-size: contain;
+  background-size: contain;
+  margin-top: 0;
+  position: absolute;
+  bottom: -16px;
+  right: 0px;
+  background-repeat: no-repeat;
+}
+
+.progressbar .progress .runner.paused {
+  height: 50px;
+  width: 60px;
+  background-image: url(AirBalticPlane.png);
+  -ms-background-size: contain;
+  background-size: contain;
+  margin-top: 0;
+  position: absolute;
+  bottom: -31px;
+  right: 0px;
+  margin-right: -3px;
+  background-repeat: no-repeat;
+}
